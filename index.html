@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio Hafsatou</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --bg: #FAF7F1;
+    --surface: #FFFFFF;
+    --surface-raised: #FFFFFF;
+    --ink: #172127;
+    --ink-soft: #4B5761;
+    --ink-faint: #7C8790;
+    --line: #E6DFD1;
+    --line-soft: #EFE9DC;
+    --accent: #0E7C86;
+    --accent-ink: #063C42;
+    --accent-soft: #DCEEEF;
+    --warm: #C96A34;
+    --warm-soft: #F5E4D6;
+    --chip-bg: #F1ECDF;
+    --shadow: 0 1px 2px rgba(23,33,39,0.04), 0 8px 24px rgba(23,33,39,0.06);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10161A;
+      --surface: #171F24;
+      --surface-raised: #1C252B;
+      --ink: #EDEBE3;
+      --ink-soft: #B6BEC3;
+      --ink-faint: #83909899;
+      --line: #2A343A;
+      --line-soft: #232C31;
+      --accent: #3FB5B0;
+      --accent-ink: #BFEDE9;
+      --accent-soft: #1A3436;
+      --warm: #E08A52;
+      --warm-soft: #33241A;
+      --chip-bg: #202A2F;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 12px 28px rgba(0,0,0,0.35);
+    }
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+    padding-inline: 24px;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .wrap { 
+    max-width: 1200px;
+    width: 92%; 
+    margin: 0 auto; 
+  }
+
+  h1, h2, h3 { font-family: "Fraunces", Georgia, serif; text-wrap: balance; color: var(--ink); margin: 0; }
+  h2 { font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.1rem); font-weight: 600; }
+  h3 { font-size: 1.15rem; font-weight: 600; }
+  p { margin: 0; }
+
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .label {
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* ---------- NAV ---------- */
+  nav.top {
+    position: sticky;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+  }
+  .brand {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+  }
+  .navlinks {
+    display: flex;
+    gap: 22px;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  .navlinks a { color: inherit; }
+  .navlinks a:hover { color: var(--accent); text-decoration: none; }
+
+  /* =========================================
+     NOUVEAU HEADER (HERO SOMBRE CENTRÉ)
+     ========================================= */
+  .hero-modern {
+    background: radial-gradient(circle at center, #1C252B 0%, #10161A 100%);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    border-radius: 24px;
+    margin-top: 40px;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+
+  .hero-modern h1 {
+    color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  .hero-modern h1 span {
+    color: var(--accent);
+    display: block;
+  }
+  
+  .hero-modern p {
+    color: #94a3b8;
+    font-size: 1.15rem;
+    margin-bottom: 40px;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-blue, .btn-white {
+    padding: 12px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: transform 0.2s, opacity 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn-blue {
+    background: var(--accent);
+    color: white;
+    border: none;
+  }
+
+  .btn-blue:hover {
+    background: var(--accent-ink);
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+
+  .btn-white {
+    background: white;
+    color: #0f172a;
+    border: none;
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  .scroll-arrow {
+    margin-top: 60px;
+    color: #94a3b8;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+  }
+
+  /* =========================================
+     TITRES DE SECTIONS CENTRÉS
+     ========================================= */
+  section { padding-block: 52px; border-top: 1px solid var(--line); }
+  
+  .section-title-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .section-title-centered h2 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: var(--ink);
+  }
+  
+  .section-title-centered p.subtitle {
+    color: var(--ink-soft);
+    margin-top: 15px;
+    font-size: 1.05rem;
+  }
+
+  .section-title-centered .underline {
+    height: 4px;
+    width: 50px;
+    background: var(--accent); 
+    border-radius: 2px;
+  }
+
+  /* =========================================
+     SECTION À PROPOS (CARTE)
+     ========================================= */
+  .about-card {
+    background: var(--surface);
+    border-radius: 20px;
+    box-shadow: var(--shadow); 
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+    align-items: flex-start; 
+  }
+
+  .about-image {
+    flex: 0 0 30%;
+    max-width: 280px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .about-image img {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    object-fit: cover;
+    border-radius: 50%; 
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+
+  .blob-bg {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100%;
+    height: 100%;
+    background: var(--warm); 
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    z-index: 1;
+  }
+
+  .about-text {
+    flex: 1.2;
+  }
+  
+  .about-text h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--ink);
+  }
+
+  .about-text p {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+  }
+
+  .contact-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+
+  .info-card {
+    border: 1px solid var(--line);
+    padding: 15px 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--bg);
+  }
+
+  .info-label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .info-value {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+
+  /* Boutons CV */
+  .cv-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-full-blue {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--accent); 
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+
+  .btn-full-blue:hover {
+    background: var(--accent-ink); 
+    text-decoration: none;
+  }
+
+  /* ---------- ANCIENNES SECTIONS (Conservées) ---------- */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 14px;
+  }
+  .skill-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 18px 18px 16px;
+    box-shadow: var(--shadow);
+  }
+  .skill-card h3 { font-size: 0.98rem; margin-bottom: 10px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.72rem;
+    background: var(--chip-bg);
+    color: var(--ink-soft);
+    padding: 4px 9px;
+    border-radius: 6px;
+  }
+  .skill-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .track-list { display: flex; flex-direction: column; gap: 18px; }
+  .track-item {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  .track-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .track-date { font-family: "IBM Plex Mono", monospace; font-size: 0.78rem; color: var(--ink-faint); padding-top: 3px; }
+  .track-body h3 { margin-bottom: 4px; }
+  .track-org { color: var(--accent); font-size: 0.88rem; font-weight: 600; margin-bottom: 6px; }
+  .track-body p { color: var(--ink-soft); font-size: 0.92rem; }
+
+  .timeline { position: relative; padding-left: 26px; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px; top: 6px; bottom: 6px;
+    width: 1.5px;
+    background: var(--line);
+  }
+  .tl-item { position: relative; padding-bottom: 34px; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    left: -26px; top: 4px;
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2.5px solid var(--accent);
+  }
+  .tl-head {
+    display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap;
+  }
+  .tl-date { font-family: "IBM Plex Mono", monospace; font-size: 0.76rem; color: var(--ink-faint); white-space: nowrap; }
+  .tl-org { color: var(--accent); font-size: 0.88rem; font-weight: 600; margin-top: 2px; }
+  .tl-item ul { margin: 10px 0 0; padding-left: 18px; color: var(--ink-soft); font-size: 0.93rem; }
+  .tl-item li { margin-bottom: 5px; }
+  .tl-featured::before { border-color: var(--warm); }
+  .tl-tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.66rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--warm);
+    background: var(--warm-soft);
+    padding: 2px 8px;
+    border-radius: 5px;
+    vertical-align: middle;
+    margin-left: 8px;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
+  }
+  .project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .project-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  .project-card .label { margin-bottom: 2px; }
+  .project-metric {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.78rem;
+    color: var(--warm);
+    background: var(--warm-soft);
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 6px;
+    width: fit-content;
+  }
+  .project-card p.desc { color: var(--ink-soft); font-size: 0.92rem; flex-grow: 1; }
+  .project-links { display: flex; gap: 14px; font-size: 0.85rem; font-weight: 600; }
+  .project-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .split-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .lang-row { display: flex; justify-content: space-between; padding-block: 8px; border-bottom: 1px solid var(--line-soft); font-size: 0.94rem; }
+  .lang-row:last-child { border-bottom: none; }
+  .lang-level { font-family: "IBM Plex Mono", monospace; color: var(--ink-faint); font-size: 0.8rem; }
+
+  .interests-list {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 20px; 
+    color: var(--ink-soft); 
+  }
+  .interests-list li { margin-bottom: 8px; }
+  .asso-logo {
+    height: 18px; 
+    vertical-align: middle; 
+    margin: 0 4px;
+    border-radius: 2px; 
+  }
+
+  footer.contact {
+    padding-block: 56px 40px;
+    border-top: 1px solid var(--line);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .contact-list { display: flex; flex-direction: column; gap: 14px; margin-top: 22px; }
+  .contact-list a, .contact-list span {
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .contact-list .k { font-family: "IBM Plex Mono", monospace; font-size: 0.72rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; display: block; margin-bottom: 2px; }
+  .avatar {
+    width: 108px; height: 108px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--accent-soft);
+    margin-bottom: 16px;
+  }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .colophon { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 0.8rem; color: var(--ink-faint); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
+
+  /* ---------- RESPONSIVE MOBILE ---------- */
+  @media (max-width: 720px) {
+    .hero-modern {
+      padding: 60px 20px;
+      margin-top: 20px;
+    }
+    .about-card {
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 30px;
+      align-items: center;
+    }
+    .track-item { grid-template-columns: 1fr; gap: 4px; }
+    .split-two { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .navlinks { display: none; }
+    h3 { font-size: 20px; }
+    .project-card { padding: 15px; }
+    .project-image { height: 150px; }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <span class="brand">Amadou Doussa Hafsatou</span>
+    <div class="navlinks">
+      <a href="#profil">Profil</a>
+      <a href="#competences">Compétences</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#experiences">Expériences</a>
+      <a href="#projets">Projets</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header class="hero-modern" id="top">
+    <div class="hero-content">
+      <h1>Bonjour, je suis<br><span>Hafsatou Amadou Doussa</span></h1>
+      <p>Étudiante ingénieure Big Data & IA • JUNIA ISEN</p>
+      
+      <div class="hero-buttons">
+        <a href="#profil" class="btn-blue">Découvrir mon profil</a>
+        <a href="#projets" class="btn-blue">Voir mes projets</a>
+        <a href="#contact" class="btn-white">Me contacter</a>
+      </div>
+    </div>
+    <div class="scroll-arrow">↓</div>
+  </header>
+
+  <!-- SECTION À PROPOS -->
+  <section id="profil" class="about-section" style="border-top: none;">
+    <div class="section-title-centered">
+      <h2>À propos de moi</h2>
+      <div class="underline"></div>
+    </div>
+
+    <div class="about-card">
+      <div class="about-image">
+        <div class="blob-bg"></div>
+        <img src="IMAGE.jpg" alt="Photo de Hafsatou">
+      </div>
+      
+      <div class="about-text">
+        <h3>Bienvenue sur mon portfolio</h3>
+        <p>J'aime donner du sens à la donnée : la nettoyer, la structurer, la modéliser — et surtout <strong>raconter ce qu'elle révèle</strong> pour la rendre utile et accessible à tous. Curieuse et rigoureuse, je me suis formée aussi bien à l'analyse (Power BI, PL-300) qu'à l'ingénierie de pipelines et au Machine Learning / NLP.</p>
+        <p>Je recherche actuellement un <strong>stage de fin d'études de 6 mois à partir de février 2027</strong> porté par des projets concrets, à impact humain.</p>
+        
+        <div class="contact-info-cards">
+          <div class="info-card">
+            <span class="icon">✉️</span>
+            <div>
+              <span class="info-label">Email</span>
+              <span class="info-value">amadou.doussahafsatou@gmail.com</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <span class="icon">📍</span>
+            <div>
+              <span class="info-label">Localisation</span>
+              <span class="info-value">Lille, France</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- TES 3 CV SONT ICI -->
+        <div class="cv-buttons">
+          <a href="CV_Amadou_Doussa_Hafsatou_DataEngineer_DevOps.pdf" class="btn-full-blue" download>📥 Télécharger CV Data Engineer / DevOps</a>
+          <a href="CV_Amadou_Doussa_Hafsatou_DataAnalyst_BI.pdf" class="btn-full-blue" download>📥 Télécharger CV Data Analyst / BI</a>
+          <a href="CV_Amadou_Doussa_Hafsatou_DataScientist_ML_stage.pdf" class="btn-full-blue" download>📥 Télécharger CV Data Scientist / ML</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION COMPÉTENCES -->
+  <section id="competences">
+    <div class="section-title-centered">
+      <h2>Compétences</h2>
+      <div class="underline"></div>
+      <p class="subtitle">Une chaîne de compétences complète, du pipeline à la restitution</p>
+    </div>
+    
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Data &amp; Business Intelligence</h3>
+        <div class="chips">
+          <span class="chip">SQL (PostgreSQL)</span><span class="chip">Power BI</span><span class="chip">DAX</span><span class="chip">Power Query</span><span class="chip">Excel avancé (TCD, VBA)</span><span class="chip">Data Storytelling</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Ingénierie des données</h3>
+        <div class="chips">
+          <span class="chip">ETL / ELT</span><span class="chip">Airbyte</span><span class="chip">Bases relationnelles</span><span class="chip">Data Cleaning</span><span class="chip">API REST</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Machine Learning &amp; IA</h3>
+        <div class="chips">
+          <span class="chip">Scikit-Learn</span><span class="chip">Feature Engineering</span><span class="chip">TensorFlow</span><span class="chip">PyTorch</span><span class="chip">Keras</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>NLP &amp; Recherche</h3>
+        <div class="chips">
+          <span class="chip">Cross-Encoders NLI</span><span class="chip">Stance Detection</span><span class="chip">Kappa de Fleiss</span><span class="chip">Similarité sémantique</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Programmation</h3>
+        <div class="chips">
+          <span class="chip">Python (Pandas, NumPy)</span><span class="chip">R (Tidyverse)</span><span class="chip">SQL</span><span class="chip">SAS</span><span class="chip">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h3>Outils &amp; Environnement</h3>
+        <div class="chips">
+          <span class="chip">Docker</span><span class="chip">Git</span><span class="chip">Linux</span><span class="chip">Documentation technique</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION PARCOURS -->
+  <section id="parcours">
+    <div class="section-title-centered">
+      <h2>Parcours académique</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="track-list">
+      <div class="track-item">
+        <div class="track-date">2024 – 2027</div>
+        <div class="track-body">
+          <h3>Cycle Ingénieur Big Data &amp; IA</h3>
+          <div class="track-org">JUNIA ISEN, Lille</div>
+          <p>Spécialisation Business Intelligence, Data Engineering, IA, Statistiques.</p>
+        </div>
+      </div>
+      <div class="track-item">
+        <div class="track-date">En cours</div>
+        <div class="track-body">
+          <h3>Certification Microsoft PL-300</h3>
+          <div class="track-org">Power BI Data Analyst Associate</div>
+          <p>Préparation en cours, en parallèle du cycle ingénieur.</p>
+        </div>
+      </div>
+      <div class="track-item">
+        <div class="track-date">2022 – 2024</div>
+        <div class="track-body">
+          <h3>Classes Préparatoires Scientifiques</h3>
+          <div class="track-org">IUC, Douala</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION EXPÉRIENCES -->
+  <section id="experiences">
+    <div class="section-title-centered">
+      <h2>Expériences professionnelles</h2>
+      <div class="underline"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item tl-featured">
+        <div class="tl-head">
+          <h3>Stagiaire Data Science &amp; IA <span class="tl-tag">expérience phare</span></h3>
+          <span class="tl-date">Mai 2026 — stage achevé</span>
+        </div>
+        <div class="tl-org">ISIA Lab, UMONS (Belgique)</div>
+        <ul>
+          <li>Structuration, nettoyage et validation d'un corpus de plus de 12 000 paires textuelles pour des tâches de similarité sémantique et de Stance Detection.</li>
+          <li>Conception et développement d'un pipeline automatisé de fact-checking de bout en bout : collecte de données web, recherche d'information et validation sémantique par modèles d'inférence (Cross-Encoders NLI), déployé en environnement conteneurisé (Docker).</li>
+          <li>Évaluation de la cohérence des annotations via des indicateurs statistiques (Kappa de Fleiss) et suivi des résultats via un tableau de bord interactif.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-head">
+          <h3>Animatrice de Communauté (Stagiaire)</h3>
+          <span class="tl-date">Juil. – Août 2025</span>
+        </div>
+        <div class="tl-org">Entourage, Lille</div>
+        <ul>
+          <li>Responsable de la gestion et de l'animation des réseaux sociaux de l'association.</li>
+          <li>Organisation en autonomie de plusieurs activités, sans supervision directe de sa hiérarchie.</li>
+          <li>Coordination transverse au sein d'une équipe de 8 personnes, communication avec des interlocuteurs variés.</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-head">
+          <h3>Assistante Back-Office Bancaire &amp; Contrôle Qualité</h3>
+          <span class="tl-date">Juil. – Sept. 2023</span>
+        </div>
+        <div class="tl-org">SCB Cameroun</div>
+        <ul>
+          <li>Gestion du traitement des chèques : vérification et suivi de leur paiement.</li>
+          <li>Scan et transmission des chèques aux banques partenaires dans le cadre de la compensation interbancaire.</li>
+          <li>Archivage rigoureux des données et documents bancaires, garantissant leur traçabilité.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION PROJETS -->
+  <section id="projets">
+    <div class="section-title-centered">
+      <h2>Projets data</h2>
+      <div class="underline"></div>
+      <p class="subtitle">Du pipeline à la restitution</p>
+    </div>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Dashboard de données" class="project-image">
+        <span class="label">Data Engineering</span>
+        <h3>Pipeline ELT &amp; Dashboard — Amazon Sales &amp; Reviews</h3>
+        <span class="project-metric">2026</span>
+        <p class="desc">Architecture ELT de bout en bout avec Airbyte : ingestion automatisée d'un dataset massif vers une base PostgreSQL, modélisation des données et dashboard Power BI connecté en direct pour le monitoring dynamique des KPI.</p>
+        <div class="project-links">
+          <a href="https://github.com/doussa29/amazon-reviews-dashboard" target="_blank" rel="noopener">Voir sur GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="Vue aérienne de New York" class="project-image">
+        <span class="label">Data Science</span>
+        <h3>Modélisation prédictive — Marché Airbnb NY</h3>
+        <span class="project-metric">2025</span>
+        <p class="desc">Structuration d'un dataset de 48 884 annonces via R (Tidyverse), analyse exploratoire et visualisations interactives, puis modélisation prédictive du prix (régression linéaire vs. arbre de décision, évaluation par RMSE).</p>
+        <div class="project-links">
+          <a href="https://github.com/doussa29/nyc2025-11-10" target="_blank" rel="noopener">Voir sur GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="Intelligence artificielle générative" class="project-image">
+        <span class="label">IA appliquée</span>
+        <h3>Pipeline IA Générative sous contrainte (ComfyUI)</h3>
+        <span class="project-metric">2025-2026 — projet d'équipe, 5 étudiants</span>
+        <p class="desc">Développement des workflows Video-to-Video (ReActor) et Image-to-Video (LivePortrait) pour la génération d'avatars parlants. Diagnostic de contraintes GPU (CUDA OOM, conflits de dépendances) et optimisation des paramètres de diffusion — gain de temps de 30 %.</p>
+        <div class="project-links">
+          <a href="https://github.com/doussa29" target="_blank" rel="noopener">Voir sur GitHub →</a>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80" alt="Analyse de l'information et journaux" class="project-image">
+        <span class="label">Data Science & NLP</span>
+        <h3>Pipeline NLP de Fact-Checking & Analyse Temporelle</h3>
+        <span class="project-metric">Mai-Août 2026 — Stage de recherche, ISIA Lab (UMONS)</span>
+        <p class="desc">Conception d'un pipeline d'extraction automatisé (API Google Fact Check, SearxNG conteneurisé sous Docker) pour identifier l'origine des désinformations. Implémentation et benchmark d'architectures sémantiques (Bi-encodeurs et Cross-encodeurs) et création d'un dataset pour l'analyse statistique du décalage de fact-checking.</p>
+        <div class="project-links">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION LANGUES ET INTERETS -->
+  <section id="langues">
+    <div class="split-two">
+      <div>
+        <div class="section-title-centered">
+          <h2>Langues</h2>
+          <div class="underline"></div>
+        </div>
+        <div class="lang-row"><span>Français</span><span class="lang-level">Natif</span></div>
+        <div class="lang-row"><span>Anglais</span><span class="lang-level">C1 — Cambridge</span></div>
+        <div class="lang-row"><span>Italien</span><span class="lang-level">A1</span></div>
+      </div>
+      <div>
+        <div class="section-title-centered">
+          <h2>Centres d'intérêt</h2>
+          <div class="underline"></div>
+        </div>
+        <ul class="interests-list">
+          <li><strong>Volley-ball</strong> : Pratique active en club</li>
+          <li><strong>Cuisine</strong> : Création culinaire</li>
+          <li><strong>Bénévolat associatif</strong> : 
+            Aide alimentaire et étudiante avec 
+            <img src="cropped-LINKEE-logo-2023.png" alt="Linkee" class="asso-logo"> 
+            et 
+            <img src="Logo_cop1.png" alt="COP1" class="asso-logo">
+          </li>
+          <li><strong>Tutorat</strong> : Mathématiques (PRREL) et accompagnement académique (JUNIA)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer class="contact" id="contact">
+    <div class="contact-grid">
+      <div>
+        <!-- Correction de la balise de l'avatar -->
+        <div class="avatar"><img src="IMAGE.jpg" alt="Photo de Hafsatou"></div>
+        <span class="label">Contact</span>
+        <h2>Parlons de votre prochain projet data</h2>
+        <p class="profil-text" style="margin-top:10px; font-size:0.95rem;">Disponible pour un stage de fin d'études de 6 mois à partir de février 2027.</p>
+      </div>
+      <div class="contact-list">
+        <div><span class="k">Email</span><a href="mailto:amadou.doussahafsatou@gmail.com">amadou.doussahafsatou@gmail.com</a></div>
+        <div><span class="k">Téléphone</span><span>+33 7 48 52 62 84</span></div>
+        <div><span class="k">Localisation</span><span>Lille, France</span></div>
+        <div><span class="k">GitHub</span><a href="https://github.com/doussa29" target="_blank" rel="noopener">github.com/doussa29</a></div>
+        <div><span class="k">LinkedIn</span><a href="https://linkedin.com/in/amadou-doussa-hafsatou-077261259" target="_blank" rel="noopener">linkedin.com/in/amadou-doussa-hafsatou</a></div>
+      </div>
+    </div>
+    <div class="colophon">
+      <span>© 2026 Amadou Doussa Hafsatou</span>
+      <span>Ingénieure Big Data &amp; IA — JUNIA ISEN</span>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
