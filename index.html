@@ -2,377 +2,313 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
-<title>Portfolio Hafsatou</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Portfolio de Hafsatou Amadou Doussa, élève ingénieure Big Data & IA à JUNIA ISEN. Recherche un stage de fin d'études de 6 mois à partir de février 2027.">
+<title>Amadou Doussa Hafsatou | Élève ingénieure Data &amp; IA</title>
+<meta name="description" data-i18n-attr="content:meta.description" content="Portfolio d'Amadou Doussa Hafsatou, élève ingénieure Big Data & IA à JUNIA ISEN (Lille). Recherche un stage de fin d'études de 6 mois à partir du 22 février 2027 : Data Analyst, Data Engineer, Data & IA, BI.">
+<meta name="author" content="Amadou Doussa Hafsatou">
+<meta name="theme-color" content="#0B6E77">
+<link rel="canonical" href="https://doussa29.github.io/portfolio_Doussa.github.io/">
+
+<!-- Open Graph (aperçu lors d'un partage sur LinkedIn, etc.) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://doussa29.github.io/portfolio_Doussa.github.io/">
+<meta property="og:title" data-i18n-attr="content:meta.title" content="Amadou Doussa Hafsatou | Élève ingénieure Data & IA">
+<meta property="og:description" data-i18n-attr="content:meta.description" content="Portfolio d'Amadou Doussa Hafsatou, élève ingénieure Big Data & IA à JUNIA ISEN (Lille). Recherche un stage de fin d'études de 6 mois à partir du 22 février 2027.">
+<meta property="og:image" content="https://doussa29.github.io/portfolio_Doussa.github.io/assets/img/photo.jpg">
+<meta property="og:locale" data-i18n-attr="content:meta.ogLocale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_GB">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+<!-- i18n.js est chargé sans defer : il fixe la langue et le thème avant l'affichage -->
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/projects.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </head>
 <body>
 
-<nav class="top">
-  <div class="wrap">
-    <span class="brand">Amadou Doussa Hafsatou</span>
-    <div class="navlinks">
-      <a href="#profil">Profil</a>
-      <a href="#competences">Compétences</a>
-      <a href="#experiences">Expériences</a>
-      <a href="#parcours">Parcours</a>
-      <a href="#projets">Projets</a>
-      <a href="#contact">Contact</a>
+<a class="skip-link" href="#contenu" data-i18n="a11y.skip">Aller au contenu</a>
+
+<header class="site-header">
+  <nav class="container nav" data-i18n-attr="aria-label:a11y.nav" aria-label="Navigation principale">
+    <a class="brand" href="#accueil" data-i18n-attr="aria-label:a11y.home" aria-label="Retour à l'accueil">Amadou Doussa Hafsatou</a>
+
+    <button class="tool-btn burger" id="burger" type="button" aria-expanded="false" aria-controls="nav-menu" data-i18n-attr="aria-label:a11y.menuOpen" aria-label="Ouvrir le menu">
+      <span class="burger-lines" aria-hidden="true"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        <li><a href="#a-propos" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#competences" data-i18n="nav.skills">Compétences</a></li>
+        <li><a href="#experiences" data-i18n="nav.experience">Expériences</a></li>
+        <li><a href="#projets" data-i18n="nav.projects">Projets</a></li>
+        <li><a href="#formation" data-i18n="nav.education">Formation</a></li>
+        <li><a href="#langues" data-i18n="nav.languages">Langues</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-tools">
+        <button class="tool-btn" id="lang-toggle" type="button" data-i18n="lang.toggle" data-i18n-attr="aria-label:a11y.lang; title:a11y.lang" aria-label="Switch to English" title="Switch to English">EN</button>
+        <button class="tool-btn" id="theme-toggle" type="button" aria-label="Changer de thème">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        </button>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
+</header>
 
-<div class="wrap">
+<main id="contenu">
 
-  <!-- HERO -->
-  <header class="hero-modern" id="top">
-    <p class="hero-name">Hafsatou Amadou Doussa</p>
-    <h1>Recherche de Stage de Fin d'Études (PFE)<span>Ingénieure Data &amp; IA</span></h1>
-    <p class="hero-meta">6 mois à partir de Février 2027 • JUNIA ISEN</p>
-
-    <div class="hero-buttons">
-      <a href="#profil" class="btn-blue">Découvrir mon profil</a>
-      <a href="#projets" class="btn-blue">Voir mes projets</a>
-      <a href="#contact" class="btn-white">Me contacter</a>
+  <!-- ACCUEIL -->
+  <section class="section hero" id="accueil" aria-labelledby="hero-title">
+    <div class="container">
+      <div class="hero-card">
+        <span class="eyebrow" data-i18n="hero.eyebrow">Stage de fin d'études, 6 mois, dès février 2027</span>
+        <h1 id="hero-title">Amadou Doussa Hafsatou</h1>
+        <p class="hero-role" data-i18n="hero.role">Élève ingénieure Big Data &amp; IA, JUNIA ISEN</p>
+        <p class="hero-pitch" data-i18n="hero.pitch">Je cherche un stage de 6 mois à partir du 22 février 2027, en Data Analyst, Data Engineer, Data &amp; IA ou BI. J'ai déjà construit des pipelines de données, des modèles en étoile et des rapports Power BI.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="assets/docs/CV_FR.pdf" download="CV_Amadou_Doussa_Hafsatou_FR.pdf" data-i18n="cv.label" data-i18n-attr="href:cv.href; download:cv.file">Télécharger mon CV</a>
+          <a class="btn btn-light" href="#contact" data-i18n="hero.contact">Me contacter</a>
+        </div>
+        <ul class="hero-stats" data-i18n-attr="aria-label:hero.statsLabel" aria-label="Quelques chiffres de mes projets">
+          <li><strong>31</strong><span data-i18n="hero.stat1">sources CSV consolidées dans un référentiel PostgreSQL</span></li>
+          <li><strong>48 884</strong><span data-i18n="hero.stat2">annonces Airbnb analysées et modélisées sous R</span></li>
+          <li><strong>30 %</strong><span data-i18n="hero.stat3">de temps de calcul gagné sur un pipeline d'IA générative</span></li>
+        </ul>
+      </div>
     </div>
-
-    <div class="hero-stats">
-      <div><b>12 000+</b><span>paires de textes validées en stage de recherche</span></div>
-      <div><b>48 884</b><span>annonces Airbnb analysées et modélisées</span></div>
-      <div><b>30 %</b><span>de temps de génération gagné sur un pipeline IA</span></div>
-    </div>
-  </header>
+  </section>
 
   <!-- À PROPOS -->
-  <section id="profil" style="border-top: none; padding-top: 0;">
-    <div class="section-title-centered">
-      <h2>À propos de moi</h2>
-      <div class="underline"></div>
-    </div>
-
-    <div class="about-card">
-      <div class="about-image">
-        <div class="blob-bg"></div>
-        <img src="assets/img/photo.jpg" alt="Photo de Hafsatou">
-      </div>
-
+  <section class="section" id="a-propos" aria-labelledby="about-title">
+    <div class="container about reveal">
+      <img class="about-photo" src="assets/img/photo.jpg" width="400" height="400" loading="lazy" alt="Portrait d'Amadou Doussa Hafsatou" data-i18n-attr="alt:about.photoAlt">
       <div class="about-text">
-        <h3>Bienvenue sur mon portfolio</h3>
-        <p>J'aime donner du sens à la donnée : la nettoyer, la structurer, la modéliser et surtout <strong>raconter ce qu'elle révèle</strong> pour la rendre utile et accessible à tous. Curieuse et rigoureuse, je me suis formée aussi bien à l'analyse (Power BI, PL-300) qu'à l'ingénierie de pipelines et au Machine Learning / NLP.</p>
-        <p>Je recherche actuellement un <strong>stage de fin d'études de 6 mois à partir de février 2027</strong> porté par des projets concrets, à impact humain.</p>
-
-        <div class="contact-info-cards">
-          <div class="info-card">
-            <span class="icon">✉️</span>
-            <div>
-              <span class="info-label">Email</span>
-              <span class="info-value"><a href="mailto:amadou.doussahafsatou@gmail.com">amadou.doussahafsatou@gmail.com</a></span>
-            </div>
-          </div>
-          <div class="info-card">
-            <span class="icon">📍</span>
-            <div>
-              <span class="info-label">Localisation</span>
-              <span class="info-value">Lille, France</span>
-            </div>
-          </div>
+        <span class="eyebrow" data-i18n="about.eyebrow">À propos</span>
+        <h2 id="about-title" data-i18n="about.heading">Data, BI et IA appliquée</h2>
+        <div style="margin-top:16px">
+          <p data-i18n="about.p1">Je suis en dernière année du cycle ingénieur Big Data &amp; IA à JUNIA ISEN, à Lille.</p>
+          <p data-i18n="about.p2">En 2026, j'ai fait un stage de recherche de 4 mois à l'ISIA Lab de l'Université de Mons, sur le projet européen AI4Debunk.</p>
+          <p data-i18n="about.p3">Je prépare la certification Microsoft PL-300 (Power BI Data Analyst).</p>
         </div>
-
-        <div id="cv">
-          <span class="info-label">Télécharger mon CV</span>
-          <div class="cv-buttons">
-            <a href="CV_Amadou_Doussa_Hafsatou_DataAnalyst_BI.pdf" class="btn-cv" download>Data Analyst / BI</a>
-            <a href="CV_Amadou_Doussa_Hafsatou_DataScientist_ML_stage.pdf" class="btn-cv" download>Data Scientist / ML</a>
-            <a href="CV_Amadou_Doussa_Hafsatou_DataEngineer_DevOps.pdf" class="btn-cv" download>Data Engineer</a>
-          </div>
+        <ul class="facts">
+          <li class="fact"><span class="fact-label" data-i18n="about.factCity">Ville</span><span class="fact-value" data-i18n="about.city">Lille, France</span></li>
+          <li class="fact"><span class="fact-label" data-i18n="about.factAvail">Disponibilité</span><span class="fact-value" data-i18n="about.avail">22 février 2027, 6 mois</span></li>
+        </ul>
+        <div class="interests">
+          <h3 data-i18n="about.interestsTitle">En dehors des études</h3>
+          <ul>
+            <li data-i18n="about.interest1">Volley-ball en club</li>
+            <li data-i18n="about.interest2">Cuisine</li>
+            <li><span data-i18n="about.interest3">Bénévolat associatif : aide alimentaire et étudiante avec</span>
+              <img class="asso-logo" src="assets/img/logo-linkee.png" alt="Linkee" loading="lazy">
+              <span data-i18n="about.and">et</span>
+              <img class="asso-logo" src="assets/img/logo-cop1.png" alt="COP1" loading="lazy">
+            </li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- COMPÉTENCES -->
-  <section id="competences">
-    <div class="section-title-centered">
-      <h2>Compétences Techniques &amp; Soft Skills</h2>
-      <div class="underline"></div>
-      <p class="subtitle">De la collecte à la restitution de la donnée</p>
+  <section class="section" id="competences" aria-labelledby="skills-title">
+    <div class="container reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="skills.eyebrow">Compétences</span>
+        <h2 id="skills-title" data-i18n="skills.heading">Outils et méthodes</h2>
+        <p data-i18n="skills.intro">Les compétences que j'ai utilisées en stage ou en projet.</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3 data-i18n="skills.g1">Analyse et BI</h3>
+          <ul class="chips">
+            <li class="chip">SQL (PostgreSQL)</li>
+            <li class="chip">Power BI (DAX, Power Query)</li>
+            <li class="chip" data-i18n="skills.excel">Excel avancé</li>
+            <li class="chip" data-i18n="skills.star">Modélisation en étoile</li>
+            <li class="chip">Microsoft Fabric</li>
+            <li class="chip">R</li>
+            <li class="chip">SAS</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3 data-i18n="skills.g2">Data engineering et cloud</h3>
+          <ul class="chips">
+            <li class="chip">ETL / ELT (Airbyte)</li>
+            <li class="chip">MDM</li>
+            <li class="chip" data-i18n="skills.quality">Qualité des données</li>
+            <li class="chip">Azure</li>
+            <li class="chip">Databricks</li>
+            <li class="chip">Terraform</li>
+            <li class="chip">Docker</li>
+            <li class="chip">Git</li>
+            <li class="chip">CI/CD</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3 data-i18n="skills.g3">IA, NLP et data science</h3>
+          <ul class="chips">
+            <li class="chip">Python (Pandas, NumPy)</li>
+            <li class="chip">Scikit-Learn</li>
+            <li class="chip">NLP (spaCy, NLTK)</li>
+            <li class="chip">Transformers</li>
+            <li class="chip">sentence-transformers</li>
+            <!-- "Notions" : affichées en pointillés -->
+            <li class="chip chip-basic">RAG</li>
+            <li class="chip chip-basic">LangChain</li>
+            <li class="chip chip-basic">LangGraph</li>
+            <li class="chip chip-basic">FAISS</li>
+            <li class="chip chip-basic">PyTorch / TensorFlow</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3 data-i18n="skills.g4">Développement</h3>
+          <ul class="chips">
+            <li class="chip">Python</li>
+            <li class="chip">Flask</li>
+            <li class="chip">FastAPI</li>
+            <li class="chip">APIs REST</li>
+            <li class="chip">JavaScript, HTML, CSS</li>
+          </ul>
+        </div>
+      </div>
+      <p class="skills-legend"><span class="chip chip-basic" data-i18n="skills.basic">notions</span> <span data-i18n="skills.legend">Notions : outils découverts en cours ou en projet, pas encore maîtrisés.</span></p>
     </div>
-
-    <div class="skills-grid">
-
-      <div class="skill-card">
-        <h3>Environnements Cloud &amp; Data</h3>
-        <div class="chips">
-          <span class="chip">Docker</span><span class="chip">Linux</span><span class="chip chip-learning">Azure</span><span class="chip chip-learning">Snowflake</span><span class="chip chip-learning">Databricks</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Data Integration &amp; ETL</h3>
-        <div class="chips">
-          <span class="chip">Airbyte</span><span class="chip">ETL / ELT</span><span class="chip">Pipelines de données</span><span class="chip chip-learning">DBT</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Data Management</h3>
-        <div class="chips">
-          <span class="chip">Qualité des données</span><span class="chip">MDM</span><span class="chip">Gouvernance de la donnée</span><span class="chip chip-learning">DataGalaxy</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Data Exchange</h3>
-        <div class="chips">
-          <span class="chip">APIs REST</span><span class="chip chip-learning">Streaming de données</span><span class="chip chip-learning">Architecture distribuée</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Data Science, NLP &amp; IA Générative</h3>
-        <div class="chips">
-          <span class="chip">Scikit-Learn</span><span class="chip">PyTorch / TensorFlow</span><span class="chip">NLP : Bi-encodeurs, Cross-encodeurs</span><span class="chip chip-learning">LangChain</span><span class="chip chip-learning">Azure OpenAI</span><span class="chip chip-learning">Azure AI Foundry</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Datavisualisation</h3>
-        <div class="chips">
-          <span class="chip">Power BI</span><span class="chip">DAX / Power Query</span><span class="chip">Tableau</span><span class="chip">Data Storytelling</span>
-        </div>
-      </div>
-
-      <div class="skill-card">
-        <h3>Programmation &amp; BDD</h3>
-        <div class="chips">
-          <span class="chip">Python (Pandas, NumPy)</span><span class="chip">SQL (PostgreSQL)</span><span class="chip">R (Tidyverse)</span><span class="chip">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="skill-card soft">
-        <h3>Soft Skills</h3>
-        <div class="chips">
-          <span class="chip">Esprit d'équipe &amp; Collaboration</span><span class="chip">Pédagogie &amp; Vulgarisation</span><span class="chip">Esprit critique</span><span class="chip">Rigueur analytique</span><span class="chip">Proactivité</span>
-        </div>
-      </div>
-    </div>
-
-    <p class="skills-legend"><span class="chip chip-learning">en pointillés</span> outils en cours d'apprentissage (5e année)</p>
   </section>
 
   <!-- EXPÉRIENCES -->
-  <section id="experiences">
-    <div class="section-title-centered">
-      <h2>Expériences professionnelles</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="panel">
-      <div class="timeline">
-        <div class="tl-item tl-featured">
-          <div class="tl-head">
-            <h3>Stagiaire Data Science &amp; IA <span class="tl-tag">expérience phare</span></h3>
-            <span class="tl-date">Mai – Août 2026</span>
-          </div>
-          <div class="tl-org">ISIA Lab, UMONS (Belgique)</div>
-          <ul>
-            <li>Structuration, nettoyage et validation d'un corpus de plus de 12 000 paires textuelles pour des tâches de similarité sémantique et de Stance Detection.</li>
-            <li>Conception et développement d'un pipeline automatisé de fact-checking de bout en bout : collecte de données web, recherche d'information et validation sémantique par modèles d'inférence (Cross-Encoders NLI), déployé en environnement conteneurisé (Docker).</li>
-            <li>Évaluation de la cohérence des annotations via des indicateurs statistiques (Kappa de Fleiss) et suivi des résultats via un tableau de bord interactif.</li>
-          </ul>
-        </div>
-        <div class="tl-item">
-          <div class="tl-head">
-            <h3>Animatrice de Communauté (Stagiaire)</h3>
-            <span class="tl-date">Juil. – Août 2025</span>
-          </div>
-          <div class="tl-org">Entourage, Lille</div>
-          <ul>
-            <li>Responsable de la gestion et de l'animation des réseaux sociaux de l'association.</li>
-            <li>Organisation en autonomie de plusieurs activités, sans supervision directe de sa hiérarchie.</li>
-            <li>Coordination transverse au sein d'une équipe de 8 personnes, communication avec des interlocuteurs variés.</li>
-          </ul>
-        </div>
-        <div class="tl-item">
-          <div class="tl-head">
-            <h3>Assistante Back-Office Bancaire &amp; Contrôle Qualité</h3>
-            <span class="tl-date">Juil. – Sept. 2023</span>
-          </div>
-          <div class="tl-org">SCB Cameroun</div>
-          <ul>
-            <li>Gestion du traitement des chèques : vérification et suivi de leur paiement.</li>
-            <li>Scan et transmission des chèques aux banques partenaires dans le cadre de la compensation interbancaire.</li>
-            <li>Archivage rigoureux des données et documents bancaires, garantissant leur traçabilité.</li>
-          </ul>
-        </div>
+  <section class="section" id="experiences" aria-labelledby="exp-title">
+    <div class="container reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="exp.eyebrow">Expériences</span>
+        <h2 id="exp-title" data-i18n="exp.heading">Expériences professionnelles</h2>
       </div>
+      <ol class="timeline">
+        <li class="tl-item">
+          <div class="tl-head"><h3 data-i18n="exp.e1.title">Stagiaire Data Science &amp; IA (R&amp;D)</h3><span class="tl-date" data-i18n="exp.e1.date">Mai - août 2026</span></div>
+          <p class="tl-org" data-i18n="exp.e1.org">ISIA Lab, Université de Mons (Belgique)</p>
+          <p class="tl-note" data-i18n="exp.e1.note">Projet européen AI4Debunk</p>
+          <ul class="tl-list" data-i18n="exp.e1.list"></ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><h3 data-i18n="exp.e2.title">Cheffe de projet, projet client</h3><span class="tl-date" data-i18n="exp.e2.date">2026 - 2027 (en cours)</span></div>
+          <p class="tl-org" data-i18n="exp.e2.org">JUNIA EdTech, Lille</p>
+          <ul class="tl-list" data-i18n="exp.e2.list"></ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><h3 data-i18n="exp.e3.title">Animatrice de communauté</h3><span class="tl-date" data-i18n="exp.e3.date">Juil. - août 2025</span></div>
+          <p class="tl-org" data-i18n="exp.e3.org">Entourage, Lille</p>
+          <ul class="tl-list" data-i18n="exp.e3.list"></ul>
+        </li>
+        <li class="tl-item">
+          <div class="tl-head"><h3 data-i18n="exp.e4.title">Assistante back-office bancaire et contrôle qualité</h3><span class="tl-date" data-i18n="exp.e4.date">Juil. - sept. 2023</span></div>
+          <p class="tl-org" data-i18n="exp.e4.org">SCB Cameroun, Douala</p>
+          <ul class="tl-list" data-i18n="exp.e4.list"></ul>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- PARCOURS -->
-  <section id="parcours">
-    <div class="section-title-centered">
-      <h2>Parcours académique</h2>
-      <div class="underline"></div>
-    </div>
-    <div class="panel">
-      <div class="track-list">
-        <div class="track-item">
-          <div class="track-date">2024 – 2027</div>
-          <div class="track-body">
-            <h3>Cycle Ingénieur Big Data &amp; IA</h3>
-            <div class="track-org">JUNIA ISEN, Lille</div>
-            <p>Spécialisation Business Intelligence, Data Engineering, IA, Statistiques.</p>
-          </div>
-        </div>
-        <div class="track-item">
-          <div class="track-date">En cours</div>
-          <div class="track-body">
-            <h3>Certification Microsoft PL-300</h3>
-            <div class="track-org">Power BI Data Analyst Associate</div>
-            <p>Préparation en cours, en parallèle du cycle ingénieur.</p>
-          </div>
-        </div>
-        <div class="track-item">
-          <div class="track-date">2022 – 2024</div>
-          <div class="track-body">
-            <h3>Classes Préparatoires Scientifiques</h3>
-            <div class="track-org">IUC, Douala</div>
-          </div>
-        </div>
+  <!-- PROJETS (cartes générées par main.js à partir de projects.js) -->
+  <section class="section" id="projets" aria-labelledby="projects-title">
+    <div class="container reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="projects.eyebrow">Projets</span>
+        <h2 id="projects-title" data-i18n="projects.heading">Projets data</h2>
+        <p data-i18n="projects.intro">Projets de cours, de groupe et personnels. Cliquez sur une carte pour voir le détail.</p>
       </div>
+      <div class="filters" role="group" data-i18n-attr="aria-label:projects.filterLabel" aria-label="Filtrer les projets par catégorie">
+        <button type="button" class="filter-btn" data-filter="all" aria-pressed="true" data-i18n="projects.all">Tous</button>
+        <button type="button" class="filter-btn" data-filter="bi" aria-pressed="false" data-i18n="cat.bi">Data Analyst / BI</button>
+        <button type="button" class="filter-btn" data-filter="eng" aria-pressed="false" data-i18n="cat.eng">Data Engineering</button>
+        <button type="button" class="filter-btn" data-filter="ds" aria-pressed="false" data-i18n="cat.ds">IA &amp; Data Science</button>
+      </div>
+      <ul class="projects-grid" id="projects-grid" aria-live="polite"></ul>
+      <p class="projects-empty" id="projects-empty" data-i18n="projects.empty" hidden>Aucun projet dans cette catégorie.</p>
     </div>
   </section>
 
-  <!-- PROJETS -->
-  <section id="projets">
-    <div class="section-title-centered">
-      <h2>Projets data</h2>
-      <div class="underline"></div>
-      <p class="subtitle">Du pipeline à la restitution</p>
-    </div>
-
-    <div class="projects-grid">
-
-      <div class="project-card project-phare">
-        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=800&q=80" alt="Analyse de l'information et journaux" class="project-image">
-        <div class="phare-content">
-          <span class="badge badge-accent">Projet phare • Data Science &amp; NLP</span>
-          <h3>Pipeline NLP de Fact-Checking &amp; Analyse Temporelle</h3>
-          <span class="project-metric">Mai – Août 2026 • Stage de recherche, ISIA Lab (UMONS)</span>
-          <p class="desc">Conception d'un pipeline d'extraction automatisé (API Google Fact Check, SearxNG conteneurisé sous Docker) pour identifier l'origine des désinformations. Implémentation et benchmark d'architectures sémantiques (Bi-encodeurs et Cross-encodeurs) et création d'un dataset pour l'analyse statistique du décalage de fact-checking.</p>
-        </div>
+  <!-- FORMATION -->
+  <section class="section" id="formation" aria-labelledby="edu-title">
+    <div class="container reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="edu.eyebrow">Formation</span>
+        <h2 id="edu-title" data-i18n="edu.heading">Formation et certification</h2>
       </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Serveurs et architecture de données" class="project-image">
-        <span class="badge badge-warm">En cours • Data Management</span>
-        <h3>Architecture MDM : Fiabilisation d'un SI Universitaire</h3>
-        <span class="project-metric">2026-2027 • Étude de cas IBI</span>
-        <p class="desc">Conception d'une démarche Master Data Management (MDM) pour un réseau universitaire. Analyse de l'existant, résolution des problématiques de qualité de données (doublons, nomenclatures hétérogènes) et modélisation d'architectures cibles pour fiabiliser le système d'information décisionnel.</p>
-        <div class="project-links">
-          <span class="project-note">Rapport d'architecture et matrice comparative à venir.</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Dashboard de données" class="project-image">
-        <span class="label">Data Engineering</span>
-        <h3>Pipeline ELT &amp; Dashboard, Amazon Sales &amp; Reviews</h3>
-        <span class="project-metric">2026</span>
-        <p class="desc">Architecture ELT de bout en bout avec Airbyte : ingestion automatisée d'un dataset massif vers une base PostgreSQL, modélisation des données et dashboard Power BI connecté en direct pour le monitoring dynamique des KPI.</p>
-        <div class="project-links">
-          <a href="https://github.com/doussa29/amazon-reviews-dashboard" target="_blank" rel="noopener">Voir sur GitHub →</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="Vue aérienne de New York" class="project-image">
-        <span class="label">Data Science</span>
-        <h3>Modélisation prédictive : Marché Airbnb NYC</h3>
-        <span class="project-metric">2025</span>
-        <p class="desc">Structuration d'un dataset de 48 884 annonces via R (Tidyverse), analyse exploratoire et visualisations interactives, puis modélisation prédictive du prix (régression linéaire vs. arbre de décision, évaluation par RMSE).</p>
-        <div class="project-links">
-          <a href="https://github.com/doussa29/nyc2025-11-10" target="_blank" rel="noopener">Voir sur GitHub →</a>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=80" alt="Intelligence artificielle générative" class="project-image">
-        <span class="label">IA appliquée</span>
-        <h3>Pipeline IA Générative sous contrainte (ComfyUI)</h3>
-        <span class="project-metric">2025-2026 • Projet d'équipe, 5 étudiants</span>
-        <p class="desc">Développement des workflows Video-to-Video (ReActor) et Image-to-Video (LivePortrait) pour la génération d'avatars parlants. Diagnostic de contraintes GPU (CUDA OOM, conflits de dépendances) et optimisation des paramètres de diffusion, avec un gain de temps de 30 %.</p>
-        <div class="project-links">
-          <a href="https://github.com/doussa29" target="_blank" rel="noopener">Voir sur GitHub →</a>
-        </div>
-      </div>
+      <ul class="edu-list">
+        <li class="edu-item">
+          <span class="edu-date">2024 - 2027</span>
+          <div><h3 data-i18n="edu.d1.title">Cycle ingénieur Big Data &amp; IA</h3><p class="edu-org" data-i18n="edu.d1.org">JUNIA ISEN, Lille</p><p data-i18n="edu.d1.text">Spécialisation business intelligence, data engineering, IA et statistiques.</p></div>
+        </li>
+        <li class="edu-item">
+          <span class="edu-date" data-i18n="edu.d2.date">En préparation</span>
+          <div><h3 data-i18n="edu.d2.title">Certification Microsoft PL-300</h3><p class="edu-org" data-i18n="edu.d2.org">Power BI Data Analyst</p><p data-i18n="edu.d2.text">Préparation en parallèle de la dernière année. Certification pas encore obtenue.</p></div>
+        </li>
+        <li class="edu-item">
+          <span class="edu-date">2022 - 2024</span>
+          <div><h3 data-i18n="edu.d3.title">Classes préparatoires scientifiques</h3><p class="edu-org" data-i18n="edu.d3.org">IUC, Douala (Cameroun)</p><p data-i18n="edu.d3.text">Mathématiques, physique, chimie, thermodynamique.</p></div>
+        </li>
+      </ul>
     </div>
   </section>
 
-  <!-- LANGUES ET INTÉRÊTS -->
-  <section id="langues">
-    <div class="split-two">
-      <div>
-        <div class="section-title-centered">
-          <h2>Langues</h2>
-          <div class="underline"></div>
-        </div>
-        <div class="lang-row"><span>Français</span><span class="lang-level">Natif</span></div>
-        <div class="lang-row"><span>Anglais</span><span class="lang-level">C1 (Cambridge)</span></div>
-        <div class="lang-row"><span>Italien</span><span class="lang-level">A1</span></div>
+  <!-- LANGUES -->
+  <section class="section" id="langues" aria-labelledby="lang-title">
+    <div class="container reveal">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="lang.eyebrow">Langues</span>
+        <h2 id="lang-title" data-i18n="lang.heading">Langues</h2>
       </div>
-      <div>
-        <div class="section-title-centered">
-          <h2>Centres d'intérêt</h2>
-          <div class="underline"></div>
-        </div>
-        <ul class="interests-list">
-          <li><strong>Volley-ball</strong> : Pratique active en club</li>
-          <li><strong>Cuisine</strong> : Création culinaire</li>
-          <li><strong>Bénévolat associatif</strong> :
-            Aide alimentaire et étudiante avec
-            <img src="assets/img/logo-linkee.png" alt="Linkee" class="asso-logo">
-            et
-            <img src="assets/img/logo-cop1.png" alt="COP1" class="asso-logo">
-          </li>
-          <li><strong>Tutorat</strong> : Mathématiques (PRREL) et accompagnement académique (JUNIA)</li>
-        </ul>
-      </div>
+      <ul class="lang-list">
+        <li class="lang-item"><span class="lang-name" data-i18n="lang.fr">Français</span><span class="lang-level" data-i18n="lang.frLevel">Langue maternelle</span></li>
+        <li class="lang-item"><span class="lang-name" data-i18n="lang.en">Anglais</span><span class="lang-level" data-i18n="lang.enLevel">C1 (Cambridge)</span></li>
+        <li class="lang-item"><span class="lang-name" data-i18n="lang.it">Italien</span><span class="lang-level" data-i18n="lang.itLevel">A1</span></li>
+      </ul>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <footer class="contact" id="contact">
-    <div class="contact-grid">
-      <div>
-        <div class="avatar"><img src="assets/img/photo.jpg" alt="Photo de Hafsatou"></div>
-        <span class="label">Contact</span>
-        <h2>Parlons de votre prochain projet data</h2>
-        <p class="contact-note">Disponible pour un stage de fin d'études de 6 mois à partir de février 2027.</p>
-
+  <section class="section" id="contact" aria-labelledby="contact-title">
+    <div class="container contact-grid reveal">
+      <div class="contact-intro">
+        <span class="eyebrow" data-i18n="contact.eyebrow">Contact</span>
+        <h2 id="contact-title" data-i18n="contact.heading">Me contacter</h2>
+        <p data-i18n="contact.text">Vous proposez un stage de fin d'études en data ou en IA à partir de février 2027 ? Écrivez-moi par email ou sur LinkedIn.</p>
         <div class="contact-actions">
-          <a href="mailto:amadou.doussahafsatou@gmail.com" class="btn-blue">Me contacter par email</a>
-          <a href="#cv" class="btn-outline">Voir mes CV</a>
+          <a class="btn btn-primary" href="mailto:amadou.doussahafsatou@gmail.com" data-i18n="contact.mail">M'écrire un email</a>
+          <a class="btn btn-ghost" href="assets/docs/CV_FR.pdf" download="CV_Amadou_Doussa_Hafsatou_FR.pdf" data-i18n="cv.label" data-i18n-attr="href:cv.href; download:cv.file">Télécharger mon CV</a>
         </div>
       </div>
-      <div class="contact-list">
-        <div><span class="k">Email</span><a href="mailto:amadou.doussahafsatou@gmail.com">amadou.doussahafsatou@gmail.com</a></div>
-        <div><span class="k">Téléphone</span><span>+33 7 48 52 62 84</span></div>
-        <div><span class="k">Localisation</span><span>Lille, France</span></div>
-        <div><span class="k">GitHub</span><a href="https://github.com/doussa29" target="_blank" rel="noopener">github.com/doussa29</a></div>
-        <div><span class="k">LinkedIn</span><a href="https://linkedin.com/in/amadou-doussa-hafsatou-077261259" target="_blank" rel="noopener">linkedin.com/in/amadou-doussa-hafsatou</a></div>
-      </div>
+      <ul class="contact-list">
+        <li><span class="fact-label" data-i18n="contact.email">Email</span><a href="mailto:amadou.doussahafsatou@gmail.com">amadou.doussahafsatou@gmail.com</a></li>
+        <li><span class="fact-label" data-i18n="contact.phone">Téléphone</span><a href="tel:+33748526284">+33 7 48 52 62 84</a></li>
+        <li><span class="fact-label">GitHub</span><a href="https://github.com/doussa29" target="_blank" rel="noopener">github.com/doussa29<span class="visually-hidden" data-i18n="contact.newTab"> (s'ouvre dans un nouvel onglet)</span></a></li>
+        <li><span class="fact-label">LinkedIn</span><a href="https://www.linkedin.com/in/amadou-doussa-hafsatou-077261259" target="_blank" rel="noopener">linkedin.com/in/amadou-doussa-hafsatou<span class="visually-hidden" data-i18n="contact.newTab"> (s'ouvre dans un nouvel onglet)</span></a></li>
+      </ul>
     </div>
-    <div class="colophon">
-      <span>© 2026 Amadou Doussa Hafsatou</span>
-      <span>Élève ingénieure Big Data &amp; IA, JUNIA ISEN</span>
-    </div>
-  </footer>
+  </section>
 
-</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© 2026 Amadou Doussa Hafsatou</span>
+    <span data-i18n="footer.role">Élève ingénieure Big Data &amp; IA, JUNIA ISEN</span>
+  </div>
+</footer>
+
+<!-- Fenêtre de détail d'un projet (contenu rempli par main.js) -->
+<dialog class="modal" id="project-modal" aria-labelledby="modal-title">
+  <div class="modal-band"></div>
+  <div class="modal-inner" id="modal-content"></div>
+</dialog>
+
 </body>
 </html>
