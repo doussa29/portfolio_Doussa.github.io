@@ -2,7 +2,8 @@
    Données des projets (cartes et fenêtres de détail).
    Pour ajouter un projet : copier un bloc { ... } et remplir les champs fr ET en.
    categories : "bi" (Data Analyst / BI), "eng" (Data Engineering), "ds" (IA & Data Science)
-   image      : chemin d'une capture dans assets/img/projects/, ou null (pas d'image)
+   image      : chemin d'une capture (assets/img/projets/nom.png) ou URL d'une image ;
+                le texte alternatif se met dans imageAlt, en fr ET en en
    github     : lien du dépôt, ou null (pas de lien affiché)
    ongoing    : true affiche l'étiquette "En cours"
    ========================================================= */
@@ -13,11 +14,12 @@ const PROJECTS = [
     year: "2026",
     categories: ["bi", "eng"],
     ongoing: false,
-    image: null, // TODO : ajouter une capture, par exemple "assets/img/projects/mdm.png"
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=75", // TODO : remplacer par la vraie capture (Rapport Power BI MDM) dans assets/img/projets/
     github: null, // TODO : ajouter le lien GitHub du projet s'il existe
     tools: ["PostgreSQL", "SQL", "Power BI", "MDM", "Architecture médaillon", "Modèle en étoile"],
     fr: {
       title: "Master Data Management : fiabilisation d'un SI universitaire",
+      imageAlt: "Baies de serveurs dans un centre de données",
       type: "Projet de groupe, terminé",
       summary: "Référentiel étudiant unique sous PostgreSQL : 31 sources CSV consolidées, 3 050 fiches dédoublonnées en 3 000 étudiants uniques.",
       context: "Les données étudiantes d'un système d'information universitaire étaient réparties dans de nombreux fichiers, avec des doublons. Le projet consistait à concevoir une démarche MDM et une preuve de concept pour fiabiliser ce référentiel.",
@@ -38,6 +40,7 @@ const PROJECTS = [
     },
     en: {
       title: "Master Data Management: making a university information system reliable",
+      imageAlt: "Server racks in a data centre",
       type: "Team project, completed",
       summary: "A single student master record in PostgreSQL: 31 CSV sources consolidated, 3,050 records deduplicated into 3,000 unique students.",
       context: "Student data in a university information system was spread across many files and contained duplicates. The goal was to design an MDM approach and a proof of concept to make this master data reliable.",
@@ -62,11 +65,12 @@ const PROJECTS = [
     year: "2026",
     categories: ["eng"],
     ongoing: true,
-    image: null, // TODO : ajouter une capture (schéma d'architecture par exemple)
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=75", // Image d'illustration Unsplash. TODO : remplacer par une capture du projet si possible
     github: null, // TODO : ajouter le lien GitHub du projet s'il existe
     tools: ["Azure", "Terraform", "Docker", "Azure Container Registry", "GitHub Actions", "Key Vault", "Azure Monitor"],
     fr: {
       title: "Application web déployée sur Microsoft Azure",
+      imageAlt: "Vue de la Terre la nuit avec les lumières des villes reliées",
       type: "Projet de groupe, cours de Cloud Computing, rendu le 7 décembre 2026",
       summary: "Infrastructure en Terraform, conteneurs Docker, intégration continue avec GitHub Actions et sécurité gérée avec Key Vault et RBAC.",
       context: "Projet du cours de Cloud Computing : déployer une application web sur Azure avec une infrastructure décrite en code, automatisée et sécurisée.",
@@ -82,6 +86,7 @@ const PROJECTS = [
     },
     en: {
       title: "Web application deployed on Microsoft Azure",
+      imageAlt: "Night view of the Earth with connected city lights",
       type: "Team project, Cloud Computing course, due 7 December 2026",
       summary: "Infrastructure as code with Terraform, Docker containers, continuous integration with GitHub Actions, and security with Key Vault and RBAC.",
       context: "Cloud Computing course project: deploy a web application on Azure with infrastructure described as code, automated and secured.",
@@ -100,11 +105,12 @@ const PROJECTS = [
     year: "2026",
     categories: ["bi"],
     ongoing: false,
-    image: null, // TODO : ajouter une capture du dashboard Power BI
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=75", // TODO : remplacer par la vraie capture (dashboard Power BI Amazon) dans assets/img/projets/
     github: "https://github.com/doussa29/amazon-reviews-dashboard",
     tools: ["Airbyte", "PostgreSQL", "SQL", "Power BI"],
     fr: {
       title: "Pipeline ELT et dashboard Power BI : Amazon Sales & Reviews",
+      imageAlt: "Tableau de bord avec des graphiques de données",
       type: "Projet personnel",
       summary: "Ingestion avec Airbyte dans PostgreSQL, modélisation en SQL et dashboard Power BI connecté en direct pour étudier l'effet des prix et des promotions.",
       context: "Projet personnel pour mettre en place une chaîne ELT complète sur un jeu de données de ventes et d'avis Amazon.",
@@ -118,6 +124,7 @@ const PROJECTS = [
     },
     en: {
       title: "ELT pipeline and Power BI dashboard: Amazon Sales & Reviews",
+      imageAlt: "Dashboard with data charts",
       type: "Personal project",
       summary: "Ingestion with Airbyte into PostgreSQL, SQL modelling and a live Power BI dashboard to study the effect of prices and discounts.",
       context: "Personal project to build a complete ELT pipeline on an Amazon sales and reviews dataset.",
@@ -135,11 +142,12 @@ const PROJECTS = [
     year: "2025",
     categories: ["ds"],
     ongoing: false,
-    image: null, // TODO : ajouter une capture (carte Leaflet par exemple)
+    image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=75", // Image d'illustration Unsplash. TODO : remplacer par une capture du projet si possible
     github: "https://github.com/doussa29/nyc2025-11-10",
     tools: ["R", "Tidyverse", "Leaflet", "Régression linéaire", "Arbre de décision"],
     fr: {
       title: "Analyse et modélisation prédictive : Airbnb New York",
+      imageAlt: "Vue aérienne de New York",
       type: "Projet académique",
       summary: "48 884 annonces analysées sous R, carte interactive Leaflet, régression et arbre de décision comparés par RMSE pour prédire le prix.",
       context: "Projet académique sur le marché Airbnb de New York : comprendre les facteurs du prix d'une annonce et le prédire.",
@@ -156,6 +164,7 @@ const PROJECTS = [
     },
     en: {
       title: "Analysis and predictive modelling: Airbnb New York",
+      imageAlt: "Aerial view of New York",
       type: "Academic project",
       summary: "48,884 listings analysed in R, an interactive Leaflet map, and a regression and a decision tree compared by RMSE to predict price.",
       context: "Academic project on the New York Airbnb market: understand what drives the price of a listing and predict it.",
@@ -175,11 +184,12 @@ const PROJECTS = [
     year: "2025 - 2026",
     categories: ["ds"],
     ongoing: false,
-    image: null, // TODO : ajouter une capture d'un workflow ComfyUI
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=800&q=75", // Image d'illustration Unsplash. TODO : remplacer par une capture du projet si possible
     github: null, // TODO : ajouter le lien GitHub du projet s'il existe
     tools: ["ComfyUI", "Python", "CUDA", "ReActor", "LivePortrait"],
     fr: {
       title: "Pipeline d'IA générative sous contrainte (ComfyUI)",
+      imageAlt: "Illustration abstraite sur l'intelligence artificielle",
       type: "Projet d'équipe, 5 étudiants",
       summary: "Workflows de génération d'avatars parlants sous ComfyUI, avec des contraintes de mémoire GPU. 30 % de temps de calcul gagné.",
       context: "Projet d'équipe de 5 étudiants : générer des avatars parlants avec ComfyUI sur des ressources GPU limitées.",
@@ -194,6 +204,7 @@ const PROJECTS = [
     },
     en: {
       title: "Generative AI pipeline under constraints (ComfyUI)",
+      imageAlt: "Abstract illustration of artificial intelligence",
       type: "Team project, 5 students",
       summary: "ComfyUI workflows to generate talking avatars under GPU memory constraints. 30% less compute time.",
       context: "Team project of 5 students: generate talking avatars with ComfyUI on limited GPU resources.",

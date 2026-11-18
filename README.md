@@ -14,7 +14,7 @@ assets/css/style.css    styles (variables de couleurs, typographie et espacement
 assets/js/i18n.js       tous les textes du site en français et en anglais
 assets/js/projects.js   données des projets (cartes et fenêtres de détail)
 assets/js/main.js       navigation, menu mobile, thème, filtres, fenêtre de détail
-assets/img/             photo, logos, favicon
+assets/img/             photo, logos, favicon ; captures des projets dans assets/img/projets/
 assets/docs/            CV en PDF : CV_FR.pdf et CV_EN.pdf
 ```
 
@@ -34,7 +34,7 @@ puis ouvrez http://localhost:8000.
 
 **Un projet** : dans `assets/js/projects.js`, copiez un bloc `{ ... }` et remplissez les champs.
 - `categories` : `"bi"` (Data Analyst / BI), `"eng"` (Data Engineering), `"ds"` (IA & Data Science). Un projet peut en avoir plusieurs.
-- `image` : chemin d'une capture, par exemple `"assets/img/projects/mdm.png"` (format 16/9 conseillé), ou `null`.
+- `image` : chemin d'une capture, par exemple `"assets/img/projets/mdm.png"` (format 16/9 conseillé) ou une URL. Le texte alternatif se met dans `imageAlt`, en `fr` et en `en`.
 - `github` : lien du dépôt, ou `null` pour ne pas afficher de lien.
 - `ongoing: true` affiche l'étiquette « En cours ».
 

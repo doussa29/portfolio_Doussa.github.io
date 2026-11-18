@@ -6,7 +6,7 @@
 <title>Amadou Doussa Hafsatou | Élève ingénieure Data &amp; IA</title>
 <meta name="description" data-i18n-attr="content:meta.description" content="Portfolio d'Amadou Doussa Hafsatou, élève ingénieure Big Data & IA à JUNIA ISEN (Lille). Recherche un stage de fin d'études de 6 mois à partir du 22 février 2027 : Data Analyst, Data Engineer, Data & IA, BI.">
 <meta name="author" content="Amadou Doussa Hafsatou">
-<meta name="theme-color" content="#0B6E77">
+<meta name="theme-color" content="#7A1F2B">
 <link rel="canonical" href="https://doussa29.github.io/portfolio_Doussa.github.io/">
 
 <!-- Open Graph (aperçu lors d'un partage sur LinkedIn, etc.) -->
@@ -22,7 +22,7 @@
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 <!-- i18n.js est chargé sans defer : il fixe la langue et le thème avant l'affichage -->
 <script src="assets/js/i18n.js"></script>
@@ -74,7 +74,7 @@
         <p class="hero-pitch" data-i18n="hero.pitch">Je cherche un stage de 6 mois à partir du 22 février 2027, en Data Analyst, Data Engineer, Data &amp; IA ou BI. J'ai déjà construit des pipelines de données, des modèles en étoile et des rapports Power BI.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="assets/docs/CV_FR.pdf" download="CV_Amadou_Doussa_Hafsatou_FR.pdf" data-i18n="cv.label" data-i18n-attr="href:cv.href; download:cv.file">Télécharger mon CV</a>
-          <a class="btn btn-light" href="#contact" data-i18n="hero.contact">Me contacter</a>
+          <a class="btn btn-secondary" href="#contact" data-i18n="hero.contact">Me contacter</a>
         </div>
         <ul class="hero-stats" data-i18n-attr="aria-label:hero.statsLabel" aria-label="Quelques chiffres de mes projets">
           <li><strong>31</strong><span data-i18n="hero.stat1">sources CSV consolidées dans un référentiel PostgreSQL</span></li>
@@ -88,7 +88,9 @@
   <!-- À PROPOS -->
   <section class="section" id="a-propos" aria-labelledby="about-title">
     <div class="container about reveal">
-      <img class="about-photo" src="assets/img/photo.jpg" width="400" height="400" loading="lazy" alt="Portrait d'Amadou Doussa Hafsatou" data-i18n-attr="alt:about.photoAlt">
+      <div class="photo-wrap">
+        <img src="assets/img/photo.jpg" width="400" height="400" loading="lazy" alt="Portrait d'Amadou Doussa Hafsatou" data-i18n-attr="alt:about.photoAlt">
+      </div>
       <div class="about-text">
         <span class="eyebrow" data-i18n="about.eyebrow">À propos</span>
         <h2 id="about-title" data-i18n="about.heading">Data, BI et IA appliquée</h2>
@@ -126,7 +128,7 @@
         <p data-i18n="skills.intro">Les compétences que j'ai utilisées en stage ou en projet.</p>
       </div>
       <div class="skills-grid">
-        <div class="skill-card">
+        <div class="skill-card lift">
           <h3 data-i18n="skills.g1">Analyse et BI</h3>
           <ul class="chips">
             <li class="chip">SQL (PostgreSQL)</li>
@@ -138,7 +140,7 @@
             <li class="chip">SAS</li>
           </ul>
         </div>
-        <div class="skill-card">
+        <div class="skill-card lift">
           <h3 data-i18n="skills.g2">Data engineering et cloud</h3>
           <ul class="chips">
             <li class="chip">ETL / ELT (Airbyte)</li>
@@ -152,7 +154,7 @@
             <li class="chip">CI/CD</li>
           </ul>
         </div>
-        <div class="skill-card">
+        <div class="skill-card lift">
           <h3 data-i18n="skills.g3">IA, NLP et data science</h3>
           <ul class="chips">
             <li class="chip">Python (Pandas, NumPy)</li>
@@ -168,7 +170,7 @@
             <li class="chip chip-basic">PyTorch / TensorFlow</li>
           </ul>
         </div>
-        <div class="skill-card">
+        <div class="skill-card lift">
           <h3 data-i18n="skills.g4">Développement</h3>
           <ul class="chips">
             <li class="chip">Python</li>
@@ -283,7 +285,7 @@
         <p data-i18n="contact.text">Vous proposez un stage de fin d'études en data ou en IA à partir de février 2027 ? Écrivez-moi par email ou sur LinkedIn.</p>
         <div class="contact-actions">
           <a class="btn btn-primary" href="mailto:amadou.doussahafsatou@gmail.com" data-i18n="contact.mail">M'écrire un email</a>
-          <a class="btn btn-ghost" href="assets/docs/CV_FR.pdf" download="CV_Amadou_Doussa_Hafsatou_FR.pdf" data-i18n="cv.label" data-i18n-attr="href:cv.href; download:cv.file">Télécharger mon CV</a>
+          <a class="btn btn-secondary" href="assets/docs/CV_FR.pdf" download="CV_Amadou_Doussa_Hafsatou_FR.pdf" data-i18n="cv.label" data-i18n-attr="href:cv.href; download:cv.file">Télécharger mon CV</a>
         </div>
       </div>
       <ul class="contact-list">
@@ -306,7 +308,6 @@
 
 <!-- Fenêtre de détail d'un projet (contenu rempli par main.js) -->
 <dialog class="modal" id="project-modal" aria-labelledby="modal-title">
-  <div class="modal-band"></div>
   <div class="modal-inner" id="modal-content"></div>
 </dialog>
 

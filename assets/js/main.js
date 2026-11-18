@@ -88,11 +88,6 @@
   const filterBtns = Array.from(document.querySelectorAll(".filter-btn"));
   let activeFilter = "all";
 
-  const catColor = (cat) => "var(--cat-" + cat + ")";
-  function bandStyle(cats) {
-    if (cats.length === 1) return catColor(cats[0]);
-    return "linear-gradient(90deg, " + cats.map(catColor).join(", ") + ")";
-  }
   const toolName = (tool, lang) => (lang === "en" && TOOL_TRANSLATIONS[tool]) || tool;
 
   function el(tag, attrs, children) {
@@ -107,7 +102,7 @@
   }
 
   function catTags(project, lang) {
-    return project.categories.map((c) => el("span", { class: "cat-tag", style: "--tag:" + catColor(c), text: t("cat." + c, lang) }));
+    return project.categories.map((c) => el("span", { class: "tag", text: t("cat." + c, lang) }));
   }
 
   function renderProjects() {
@@ -121,8 +116,10 @@
         el("span", { class: "project-year", text: p.year }),
         p.ongoing ? el("span", { class: "status-tag", text: t("status.ongoing", lang) }) : null
       ]);
-      const img = p.image
-        ? el("img", { class: "project-img", src: p.image, alt: t("projects.imgAlt", lang) + " : " + txt.title, loading: "lazy", width: "640", height: "360" })
+      const media = p.image
+        ? el("div", { class: "project-media" }, [
+            el("img", { src: p.image, alt: txt.imageAlt || "", loading: "lazy", decoding: "async", width: "800", height: "450" })
+          ])
         : null;
       const openBtn = el("button", { type: "button", class: "project-open", "aria-haspopup": "dialog", "aria-describedby": titleId }, [
         document.createTextNode(t("projects.open", lang) + " "),
@@ -131,9 +128,8 @@
       openBtn.addEventListener("click", () => openModal(p, openBtn));
 
       const card = el("li", { "data-categories": p.categories.join(" ") }, [
-        el("article", { class: "project-card" }, [
-          el("div", { class: "project-band", style: "--band:" + bandStyle(p.categories) }),
-          img,
+        el("article", { class: "project-card lift" }, [
+          media,
           el("div", { class: "project-body" }, [
             meta,
             el("h3", { id: titleId, text: txt.title }),
@@ -178,7 +174,6 @@
     const lang = currentLang();
     const txt = p[lang];
     modalContent.textContent = "";
-    modal.style.setProperty("--band", bandStyle(p.categories));
 
     const closeBtn = el("button", { type: "button", class: "modal-close", "aria-label": t("projects.close", lang), title: t("projects.close", lang) }, [
       el("span", { "aria-hidden": "true", text: "×" })
@@ -189,11 +184,11 @@
       el("div", { class: "modal-head" }, [
         el("div", {}, [
           el("div", { class: "project-meta" }, [...catTags(p, lang), el("span", { class: "project-year", text: p.year + " · " + txt.type })]),
-          el("h2", { id: "modal-title", text: txt.title, style: "margin-top:8px" })
+          el("h2", { id: "modal-title", text: txt.title })
         ]),
         closeBtn
       ]),
-      p.image ? el("img", { class: "project-img", src: p.image, alt: t("projects.imgAlt", lang) + " : " + txt.title, loading: "lazy", style: "border-radius:8px;margin-top:16px" }) : null,
+      p.image ? el("img", { class: "modal-img", src: p.image, alt: txt.imageAlt || "", loading: "lazy", width: "800", height: "450" }) : null,
       el("h3", { text: t("projects.context", lang) }),
       el("p", { text: txt.context }),
       listBlock("projects.did", txt.did, lang),
